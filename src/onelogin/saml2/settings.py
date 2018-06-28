@@ -622,7 +622,10 @@ class OneLogin_Saml2_Settings(object):
             self.get_contacts(), self.get_organization()
         )
 
-        add_encryption = self.__security['wantNameIdEncrypted'] or self.__security['wantAssertionsEncrypted']
+        # some customers were relying on the existence of the encryption key
+        # even though we do not want encrypted assertions or nameId.
+        add_encryption = True # always add encryption, for this branch
+        # self.__security['wantNameIdEncrypted'] or self.__security['wantAssertionsEncrypted']
 
         cert_new = self.get_sp_cert_new()
         metadata = OneLogin_Saml2_Metadata.add_x509_key_descriptors(metadata, cert_new, add_encryption)
