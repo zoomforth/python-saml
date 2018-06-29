@@ -10,7 +10,7 @@ from setuptools import setup
 setup(
     name='python-saml',
     version='2.2.1',
-    description='Onelogin Python Toolkit. Add SAML support to your Python software using this library',
+    description='Zoomforth modified to include get_last_message_id. Onelogin Python Toolkit. Add SAML support to your Python software using this library',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
